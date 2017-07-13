@@ -10,10 +10,10 @@
     <p> From the Guys who brought you Horseshoes and Handgrenades. </p>
     <div class="hangPic">
       <img src="http://img.photobucket.com/albums/v60/PandoraSD/Hangman/H10.gif" alt="">
-      <h3 class="hangLetters"> this is where the words will go </h3>
+      <h3 class="hangLetters"> this is where the puzzle words will go </h3>
     </div>
     <form action="/action_page.php">
-      <input type="text" name="letterGuess" placeholder=" enter letter " style="display: inline;">
+      <input type="text" name="letterGuess" placeholder=" enter letter " style="display: inline;"maxlength="1" minlength="1">
     </form>
 
 
@@ -21,6 +21,7 @@
       <div class="controls">
           <button type="button"> submit </button>
           <button type="button"> reset </button>
+      <p> id="chances"> you have chances remaining </p>    
       </div>
     </footer>
     <script
