@@ -1,0 +1,10 @@
+body {
+  text-align: center;
+}
+.hangPic {
+  display: auto;
+  flex-direction: column;
+}
+input {
+  text-align: center;
+}
