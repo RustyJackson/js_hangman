@@ -46,10 +46,14 @@ $('.submit').click(function () {
     console.log(phWord)
     $('.hangLetters').text(phWord)
     updateLettersShown()
-  } else {
-    console.log('wrong')
-    chances -= 1
-    $('#chances').text(`you have ${chances} chances remaining`)
+
+
+
+
+
+
+
+  .querySelector('selector')
   }
   function updateLettersShown () {
     if (randomWord.includes('letterGuess')) {
@@ -68,14 +72,10 @@ $('.submit').click(function () {
     return phWord
   }
 })
-
- // cosole.log('incorrect')
-  // }
-// }
-
-    // if (result==' ') {
-        // display('');
-    // else if (words == alphabet) {
+$('#start').on('click', replay)
+function replay() {
+  window.open('index.html', '_self')
+}
 
   // var deathPic = new Array();
 
