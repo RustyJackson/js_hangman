@@ -10,18 +10,17 @@
     <p> From the Guys who brought you Horseshoes and Handgrenades. </p>
     <div class="hangPic">
       <img src="http://img.photobucket.com/albums/v60/PandoraSD/Hangman/H10.gif" alt="">
-      <h3 class="hangLetters"> this is where the puzzle words will go </h3>
+      <pre class="hangLetters"> this is where the puzzle words will go </pre>
     </div>
-    <form action="/action_page.php">
-      <input type="text" name="letterGuess" placeholder=" enter letter " style="display: inline;"maxlength="1" minlength="1">
-    </form>
+      <input type="text" class="letterGuess" placeholder=" enter letter " style="display: inline;"maxlength="1" minlength="1";>
 
 
     <footer>
       <div class="controls">
-          <button type="button"> submit </button>
-          <button type="button"> reset </button>
-      <p> id="chances"> you have chances remaining </p>    
+          <button class="submit" type="button"> submit </button>
+          <button class="reset" type="button"> reset </button>
+      <p id="chances"> you have 6 chances remaining </p>
+      <pre class="guessedLetters"></pre>
       </div>
     </footer>
     <script
