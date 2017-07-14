@@ -1,38 +1,81 @@
 
 var randomWord
+var guesses = []
 var result
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-    'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-    't', 'u', 'v', 'w', 'x', 'y', 'z']
+var chances = 6
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+  'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+  't', 'u', 'v', 'w', 'x', 'y', 'z']
 // This array holds the alphabet we will pull from.
-  var words = ["spaceballs", "cat videos", "rick and morty", "birdman"]
+var words = ['spaceballs', 'cat videos', 'rick and morty', 'birdman']
 // This function will pick our word from the random list
 function chooseWord () {
   randomWord = words[Math.floor(Math.random() * words.length)]
   randomWord = randomWord.split('')
   return randomWord
-  }
+}
 // This will create an underscore for each letter in the word and assign them to a variable
 function blanksFromAnswer (answerWord) {
- result = ''
+  result = ''
   for (var i = 0; i < answerWord.length; i++) {
-    if (answerWord[i]==' ')
-    result += '   '
-    else
-    result += ' _ '
+    if (answerWord[i] === ' ') {
+      result += '  '
+    } else {
+      result += ' _ '
+    }
   }
   return result
 }
-function play() {
-  chooseWord ()
-  blanksFromAnswer (randomWord)
+function play () {
+  chooseWord()
+  blanksFromAnswer(randomWord)
   $('.hangLetters').text(result)
 }
+
 play()
+
+$('.submit').click(function () {
+  var letter = $('.letterGuess').val()
+  console.log(letter)
+  guesses.push(letter)
+  $('.guessedLetters').text(guesses)
+  if (randomWord.includes(letter)) {
+    console.log('correct')
+    guesses.push(letter)
+    var phWord = buildPartiallyHiddenWord()
+    console.log(phWord)
+    $('.hangLetters').text(phWord)
+    updateLettersShown()
+  } else {
+    console.log('wrong')
+    chances -= 1
+    $('#chances').text(`you have ${chances} chances remaining`)
+  }
+  function updateLettersShown () {
+    if (randomWord.includes('letterGuess')) {
+      document.write.hangLetters(updateLettersShown)
+    }
+  }
+  function buildPartiallyHiddenWord () {
+
+    var phWord = randomWord.map(function (letter) {
+      if (guesses.includes(letter) || letter === ' ') {
+        return letter
+      } else {
+        return '_'
+      }
+    }).join(' ')
+    return phWord
+  }
+})
+
+ // cosole.log('incorrect')
+  // }
+// }
+
     // if (result==' ') {
         // display('');
     // else if (words == alphabet) {
-
 
   // var deathPic = new Array();
 
