@@ -46,6 +46,10 @@ $('.submit').click(function () {
     console.log(phWord)
     $('.hangLetters').text(phWord)
     updateLettersShown()
+  } else {
+    console.log('wrong')		 
+    chances -= 1
+    $('#chances').text(`you have ${chances} chances remaining`)
 
 
 
@@ -53,7 +57,8 @@ $('.submit').click(function () {
 
 
 
-  .querySelector('selector')
+
+  // .querySelector('selector')
   }
   function updateLettersShown () {
     if (randomWord.includes('letterGuess')) {
